@@ -31,14 +31,18 @@ public class MyApplication {
 
 
     public static final String MENU = """
-            \n\tMenu\n
+            
+                Menu
+            
             1. Method greetings - Output 4 word in column: Hello, World, from, Java
             2. Method checkSign - the sum of 3 int a, b и c. In case of 0 or greater, output /“Сумма положительная/”, and if less then 0 output /“Сумма отрицательная/”
             3. Method selectColor - random int data. if data < 10, output to console Red message, if  10 <= data >= 20 so, Ÿellow, if data > 20 - “Green”
             4. Method compareNumbers , random int variable a and b. if  a >= b, output to console “a >= b”, otherwice “a < b”
-            5. Method Создайте метод addOrSubtractAndPrint(int initValue, int delta, boolean increment). Если increment = true, то метод должен к initValue прибавить delta и отпечатать в консоль результат, в противном случае - вычесть; 
-            6. Random generator debug method 100 sign 100 unsign and 100 sign numbers  
-            \n\t Enter digit value between 1 and 6 for choose option and 0 for exit.\n\t""";
+            5. Method addOrSubtractAndPrint(int initValue, int delta, boolean increment). if increment = true, so method add initValue to delta and output result, in other case substract;
+            6. Random generator debug method 100 sign 100 unsign and 100 sign numbers
+            
+                 Enter digit value between 1 and 6 for choose option and 0 for exit.
+                 """;
 
     public static final int OPTIONS_QUANTITY = 6;
 
