@@ -14,6 +14,7 @@ package ru.otus.java.basic.homeworks;
 
 
 import org.jetbrains.annotations.NotNull;
+
 import java.util.Scanner;
 
 public class MyApplication {
@@ -26,16 +27,18 @@ public class MyApplication {
     public static final String SUM_IS_POSITIVE = "Сумма положительная";
     public static final String SUM_IS_NEGATIVE = "Сумма отрицательная";
 
+    public static final int MAX_DIGIT = 99;
+
 
     public static final String MENU = """
-            \n\n\tMenu\n
+            \n\tMenu\n
             1. Method greetings - Output 4 word in column: Hello, World, from, Java
             2. Method checkSign - the sum of 3 int a, b и c. In case of 0 or greater, output /“Сумма положительная/”, and if less then 0 output /“Сумма отрицательная/”
-            3. Method selectColor - в теле которого задайте int переменную data с любым начальным значением. Если data меньше 10 включительно, то в консоль должно быть выведено сообщение “Красный”, если от 10 до 20 включительно, то “Желтый”, если больше 20 - “Зеленый”
-            4. Method compareNumbers , в теле которого объявите две int переменные a и b с любыми начальными значениями. Если a больше или равно b, то необходимо вывести в консоль сообщение “a >= b”, в противном случае “a < b”
+            3. Method selectColor - random int data. if data < 10, output to console Red message, if  10 <= data >= 20 so, Ÿellow, if data > 20 - “Green”
+            4. Method compareNumbers , random int variable a and b. if  a >= b, output to console “a >= b”, otherwice “a < b”
             5. Method Создайте метод addOrSubtractAndPrint(int initValue, int delta, boolean increment). Если increment = true, то метод должен к initValue прибавить delta и отпечатать в консоль результат, в противном случае - вычесть; 
             6. Random generator debug method 100 sign 100 unsign and 100 sign numbers  
-            \n\t enter digit value between 1 and 6 for choose option and 0 for exit.""";
+            \n\t Enter digit value between 1 and 6 for choose option and 0 for exit.\n\t""";
 
     public static final int OPTIONS_QUANTITY = 6;
 
@@ -50,22 +53,20 @@ public class MyApplication {
             System.out.print(MENU);
             i = getOptionValueAndValidate(OPTIONS_QUANTITY);
             switch (i) {
-                case 0:
-                    return;
                 case 1:
                     greetings("Hello", "World", "from", "Java");
                     break;
                 case 2:
-                    checkSign(getSignRandomInt(99), getSignRandomInt(99), getSignRandomInt(99));
+                    checkSign(getSignRandomInt(MAX_DIGIT), getSignRandomInt(MAX_DIGIT), getSignRandomInt(MAX_DIGIT));
                     break;
                 case 3:
                     selectColor(getUnsingRandomInt(30));
                     break;
                 case 4:
-                    compareNumbers();
+                    compareNumbers(getSignRandomInt(MAX_DIGIT), getSignRandomInt(MAX_DIGIT));
                     break;
                 case 5:
-                    addOrSubtractAndPrint(getSignRandomInt(99), getSignRandomInt(99), getRandomSign() == 1);
+                    addOrSubtractAndPrint(getSignRandomInt(MAX_DIGIT), getSignRandomInt(MAX_DIGIT), getRandomSign() == 1);
                     break;
                 case 6:
                     debugRandomGenerator();
@@ -93,8 +94,9 @@ public class MyApplication {
     }
 
 
-    private static void compareNumbers() {
-        System.out.println("Result of comparison method is");
+    private static void compareNumbers(int a, int b) {
+        System.out.println("\tRandom values a and b are\n\t" + a + ", " + b);
+        System.out.println("\tResult of comparison method is " + ((a < b) ? "a<b" : "a>=b"));
     }
 
     /****
@@ -104,14 +106,14 @@ public class MyApplication {
      * если больше 20 - “Зеленый”
      * */
     private static void selectColor(int date) {
-        System.out.println("Date is " + date);
+        System.out.println("\tDate is " + date);
         String resultColor;
 
         if (date > 20) resultColor = ANSI_GREEN + "Green";
         else if (date >= 10) resultColor = ANSI_YELLOW + "Yellow";
         else resultColor = ANSI_RED + "Red";
 
-        String resultMessage = String.format("Message is %s%s !!!", resultColor, ANSI_RESET);
+        String resultMessage = String.format("\tMessage is %s%s !!!", resultColor, ANSI_RESET);
         System.out.println(resultMessage);
     }
 
@@ -123,8 +125,9 @@ public class MyApplication {
     }
 
     private static void addOrSubtractAndPrint(int initValue, int delta, boolean increment) {
+        System.out.println("\tRandom values are\n\t" + initValue + ", " + delta + ", " + increment);
         int res = (increment ? initValue + delta : initValue - delta);
-        System.out.format("Result=%d", res);
+        System.out.format("\tResult=%d", res);
 
     }
 
@@ -143,19 +146,19 @@ public class MyApplication {
     }
 
     private static void debugRandomGenerator() {
-        String rezult="";
+        String rezult = "";
         for (int i = 0; i < 100; i++) {
-            rezult = rezult +" " + getRandomSign();
+            rezult = rezult + " " + getRandomSign();
         }
         System.out.println(rezult);
-        rezult="";
+        rezult = "";
         for (int i = 0; i < 100; i++) {
-            rezult = rezult +" " + getUnsingRandomInt(20);
+            rezult = rezult + " " + getUnsingRandomInt(20);
         }
         System.out.println(rezult);
-        rezult="";
+        rezult = "";
         for (int i = 0; i < 100; i++) {
-            rezult = rezult +" " + getSignRandomInt(20);
+            rezult = rezult + " " + getSignRandomInt(20);
         }
         System.out.println(rezult);
     }
