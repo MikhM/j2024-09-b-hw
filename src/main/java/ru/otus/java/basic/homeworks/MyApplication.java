@@ -16,6 +16,7 @@ package ru.otus.java.basic.homeworks;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.Scanner;
+import java.util.function.IntUnaryOperator;
 
 public class MyApplication {
 
@@ -147,6 +148,15 @@ public class MyApplication {
 
     }
 
+    static void apply100times(IntUnaryOperator meth) {
+        StringBuilder result = new StringBuilder();
+        for (int i = 0; i < 100; i++) {
+            result.append(meth.applyAsInt(20) + " ");
+        }
+        System.out.println(result);
+    }
+
+
     private static void debugRandomGenerator() {
 
         String rezult = "";
@@ -154,20 +164,10 @@ public class MyApplication {
             rezult = rezult + " " + getRandomSign();
         }
         System.out.println(rezult);
-        rezult = "";
-        for (int i = 0; i < 100; i++) {
-            rezult = rezult + " " + getUnsingRandomInt(20);
-        }
-        System.out.println(rezult);
-        rezult = "";
-        for (int i = 0; i < 100; i++) {
-            rezult = rezult + " " + getSignRandomInt(20);
-        }
-        System.out.println(rezult);
-    }
 
-    private static void execute100times(MyApplication action) {
-        System.out.println(action);
+        apply100times(MyApplication::getUnsingRandomInt);
+        apply100times(MyApplication::getSignRandomInt);
+
     }
 
     private static void clearConsole() {
