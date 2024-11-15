@@ -24,6 +24,9 @@ public class MyApplication {
         System.out.println("\n\n5. Compare Sum Of Half  method.");
         compareSumOfHalf(MASSIVE2);
 
+        System.out.println("\n\n6.  Sums Of masives to masive   method.");
+        calculateSumOfMas(MASSIVE1, MASSIVE2, MASSIVE1);
+
 
     }
 
@@ -32,7 +35,7 @@ public class MyApplication {
     // и печатающий в консоль строку указанное количество раз
 
     static void repeatString(String str, int n) {
-        //   System.out.println(str.repeat(n));
+
         for (int i = 0; i < n; i++) {
             System.out.print(str + "|");
         }
@@ -57,12 +60,9 @@ public class MyApplication {
         System.out.println("Massive before");
 
         printMssive(mas);
-
-        // Arrays.fill(mas, value);
         for (int i = 0; i < mas.length; i++) {
             mas[i] = value;
         }
-
         System.out.println("\nMassive after");
         printMssive(mas);
     }
@@ -93,15 +93,32 @@ public class MyApplication {
             theSumOfTheFirstHalfOfMas += mas[i];
             theSumOfTheSecondHalfOfMas += mas[mas.length - i - 1];
         }
-        System.out.println("\n"+theSumOfTheFirstHalfOfMas);
+        System.out.println("\n" + theSumOfTheFirstHalfOfMas);
         System.out.println(theSumOfTheSecondHalfOfMas);
         if (theSumOfTheFirstHalfOfMas == theSumOfTheSecondHalfOfMas)
             System.out.println("The results are equals");
         else System.out.println("The result is " +
                 ((theSumOfTheFirstHalfOfMas > theSumOfTheSecondHalfOfMas) ? "\nThe first sum is bigger" : "The second sum is bigger"));
-
     }
 
+
+    static public void calculateSumOfMas(int[]... mas) {
+        int[] resultMas = new int[mas.length];
+        int sumOfMas = 0, i = 0;
+
+        for (int[] item : mas) {
+            for (int internalItem : item) {
+                System.out.print(internalItem + " ");
+                sumOfMas += internalItem;
+            }
+
+            System.out.println();
+            resultMas[i] = sumOfMas;
+            sumOfMas = 0;
+            i++;
+        }
+        printMssive(resultMas);
+    }
 
     static void printMssive(int[] mas) {
         for (int item : mas)
