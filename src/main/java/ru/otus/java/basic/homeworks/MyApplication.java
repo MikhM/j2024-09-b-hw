@@ -42,7 +42,7 @@ public class MyApplication {
             6. Random generator debug method 100 sign 100 unsign and 100 sign numbers
             
                  Enter digit value between 1 and 6 for choose option and 0 for exit.
-                 """;
+            """;
 
     public static final int OPTIONS_QUANTITY = 6;
 
@@ -117,8 +117,7 @@ public class MyApplication {
         else if (date >= 10) resultColor = ANSI_YELLOW + "Yellow";
         else resultColor = ANSI_RED + "Red";
 
-        String resultMessage = String.format("\tMessage is %s%s !!!", resultColor, ANSI_RESET);
-        System.out.println(resultMessage);
+        System.out.format("\tMessage is %s%s !!!", resultColor, ANSI_RESET);
     }
 
     private static void checkSign(int signRandomInt, int signRandomInt1, int signRandomInt2) {
@@ -130,8 +129,7 @@ public class MyApplication {
 
     private static void addOrSubtractAndPrint(int initValue, int delta, boolean increment) {
         System.out.println("\tRandom values are\n\t" + initValue + ", " + delta + ", " + increment);
-        int res = (increment ? initValue + delta : initValue - delta);
-        System.out.format("\tResult=%d", res);
+        System.out.format("\tResult=%d", (increment ? initValue + delta : initValue - delta));
 
     }
 
@@ -150,6 +148,7 @@ public class MyApplication {
     }
 
     private static void debugRandomGenerator() {
+
         String rezult = "";
         for (int i = 0; i < 100; i++) {
             rezult = rezult + " " + getRandomSign();
@@ -165,6 +164,10 @@ public class MyApplication {
             rezult = rezult + " " + getSignRandomInt(20);
         }
         System.out.println(rezult);
+    }
+
+    private static void execute100times(MyApplication action) {
+        System.out.println(action);
     }
 
     private static void clearConsole() {
