@@ -1,4 +1,4 @@
-package ru.otus.java.basic.homeworks;
+package ru.otus.java.basic.homeworks.hw3;
 
 /*
  * (1) Реализуйте метод greetings(), который при вызове должен отпечатать в столбец 4 слова: Hello, World, from, Java;
@@ -111,11 +111,16 @@ public class MyApplication {
      * если больше 20 - “Зеленый”
      * */
     private static void selectColor(int date) {
+
+        final int RED_THRESHOLD = 10;
+        final int YELLOW_THRESHOLD = 20;
+
+
         System.out.println("\tDate is " + date);
         String resultColor;
 
-        if (date > 20) resultColor = ANSI_GREEN + "Green";
-        else if (date >= 10) resultColor = ANSI_YELLOW + "Yellow";
+        if (date > YELLOW_THRESHOLD) resultColor = ANSI_GREEN + "Green";
+        else if (date >= RED_THRESHOLD) resultColor = ANSI_YELLOW + "Yellow";
         else resultColor = ANSI_RED + "Red";
 
         System.out.format("\tMessage is %s%s !!!", resultColor, ANSI_RESET);
