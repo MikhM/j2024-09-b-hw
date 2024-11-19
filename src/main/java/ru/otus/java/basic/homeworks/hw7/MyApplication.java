@@ -1,11 +1,11 @@
 package ru.otus.java.basic.homeworks.hw7;
 
-import java.sql.SQLOutput;
+
 import java.util.Arrays;
 
 public class MyApplication {
     static public final int[][] ARRAY1 = {{1, 2, 3, 4, 4, 5, 6, 6, 7, 8},
-            {1, 2, 3, 4, 4, 5, 6, 6, 7, 8},
+            {1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
             {1, 2, 3, 4, 4, 5, 6, 6, 7, 8},
             {1, 2, 3, 4, 4, 5, 6, 6, 7, 8},
             {1, 2, 3, 4, 4, 5, 6, 6, 7, 8},
@@ -15,10 +15,11 @@ public class MyApplication {
             {1, 2, 3, 4, 4, 5, 6, 99, 7, 8},
             {1, 2, 3, 4, 4, 5, 6, 6, 7, 8}};
     static public final int[][] ARRAY2 = {{1, 2, 3, 4, 4, 5, 6, 6, 7, -8},
-            {1, 2, 3, 4, 4, 5, 6, 6, 7, -8},
+            {1, 2, 3, 4, 4, 5, 6, 6, 7, 100},
             {1, 2, 3, 4, 4, 5, 6, 6, 7, -8},
             {1, 2, 3, 4, 4, 5, 6, 6, 7, -8},
             {1, 2, 3, 4, 4, 5, 6, 6, 7, 8}};
+    static public final int[][] ARRAY3 = {{1, 2, 3, 4, 4, 5, 6, 6, 7, -8}};
 
     public static void main(String[] args) {
 
@@ -37,20 +38,30 @@ public class MyApplication {
 
         System.out.println("\n4 Max value of array");
         printArray2D(ARRAY1);
-        System.out.println("Max value=" +maxValue(ARRAY1));
+        System.out.println("Max value=" + maxValue(ARRAY1));
         printArray2D(ARRAY2);
-        System.out.println("Max value=" +maxValue(ARRAY2));
+        System.out.println("Max value=" + maxValue(ARRAY2));
 
         //     Реализуйте метод, который считает сумму элементов второй строки двумерного массива, если второй строки не существует, то в качестве результата необходимо вернуть -1
 
-        System.out.println("\n5 Max value of array");
-        printArray2D(ARRAY1);
-        System.out.println("Max value=" +maxValue(ARRAY1));
+        System.out.println("\n5 Sum of 2th line of array and -1 if empty");
+
         printArray2D(ARRAY2);
-        System.out.println("Max value=" +maxValue(ARRAY2));
+        System.out.println("value=" + sumOfTheSecondLine(ARRAY2));
+
+        printArray2D(ARRAY3);
+        System.out.println("value=" + sumOfTheSecondLine(ARRAY3));
 
 
+    }
 
+    private static int sumOfTheSecondLine(int[][] array) {
+        if (array.length == 1) return -1;
+        int res = 0;
+        for (int i = 0; i < array[0].length; i++) {
+            res += array[1][i];
+        }
+        return res;
     }
 
 
@@ -102,10 +113,10 @@ public class MyApplication {
 
     private static int maxValue(int[][] array) {
         int maxVal = 0;
-        for (int i = 0; i < array.length; i++) {
+        for (int[] ints : array) {
             for (int j = 0; j < array[0].length; j++) {
-                if (maxVal < array[i][j])
-                    maxVal = array[i][j];
+                if (maxVal < ints[j])
+                    maxVal = ints[j];
             }
         }
         return maxVal;
