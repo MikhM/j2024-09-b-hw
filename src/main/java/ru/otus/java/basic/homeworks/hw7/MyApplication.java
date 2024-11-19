@@ -24,7 +24,7 @@ public class MyApplication {
     public static void main(String[] args) {
 
         System.out.println("\n1. sum of postive items of ARRAY2");
-        System.out.println("Sum=" + sumOpositiveValues(ARRAY2));
+        System.out.println("Sum=" + sumOfPositiveValues(ARRAY2));
 
         System.out.println("\n2. Squres of stars 1, 3 and 10 size");
         squareOfStars(1);
@@ -66,12 +66,12 @@ public class MyApplication {
 
 
     //    Реализовать метод sumOfPositiveElements(..), принимающий в качестве аргумента целочисленный двумерный массив, метод должен посчитать и вернуть сумму всех элементов массива, которые больше 0;
-    private static int sumOpositiveValues(int[][] array1) {
+    private static int sumOfPositiveValues(int[][] array1) {
         int sum = 0;
-        for (int i = 0; i < array1.length; i++) {
+        for (int[] ints : array1) {
             for (int j = 0; j < array1[0].length; j++) {
-                System.out.print(array1[i][j] + " ");
-                if (array1[i][j] > 0) sum += array1[i][j];
+                System.out.print(ints[j] + " ");
+                if (ints[j] > 0) sum += ints[j];
             }
             System.out.println();
         }
