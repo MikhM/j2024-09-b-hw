@@ -23,7 +23,7 @@ public class MyApplication {
 
     public static void main(String[] args) {
 
-        System.out.println("\n1. sum of postive items of ARRAY2");
+        System.out.println("\n1. sum of positive items of ARRAY2");
         System.out.println("Sum=" + sumOfPositiveValues(ARRAY2));
 
         System.out.println("\n2. Squres of stars 1, 3 and 10 size");
@@ -42,8 +42,6 @@ public class MyApplication {
         printArray2D(ARRAY2);
         System.out.println("Max value=" + maxValue(ARRAY2));
 
-        //     Реализуйте метод, который считает сумму элементов второй строки двумерного массива, если второй строки не существует, то в качестве результата необходимо вернуть -1
-
         System.out.println("\n5 Sum of 2th line of array and -1 if empty");
 
         printArray2D(ARRAY2);
@@ -56,7 +54,7 @@ public class MyApplication {
     }
 
     private static int sumOfTheSecondLine(int[][] array) {
-        if (array.length == 1) return -1;
+        if (array.length < 1) return -1;
         int res = 0;
         for (int i = 0; i < array[0].length; i++) {
             res += array[1][i];
@@ -112,7 +110,7 @@ public class MyApplication {
     //    Реализовать метод findMax(int[][] array) который должен найти и вернуть максимальный элемент массива;
 
     private static int maxValue(int[][] array) {
-        int maxVal = 0;
+        int maxVal = array[0][0];
         for (int[] ints : array) {
             for (int j = 0; j < array[0].length; j++) {
                 if (maxVal < ints[j])
