@@ -44,7 +44,6 @@ public class MyApplication {
         System.out.println("\n\n9.  Array sum method.");
         arraySum(MASSIF1, MASSIF2, MASSIF3, MASSIF4);
 
-
         System.out.println("\n\n9.  Array sum method.");
         checkBalancePoint(MASSIF4);
         checkBalancePoint(MASSIF5);
@@ -54,7 +53,7 @@ public class MyApplication {
     private static void checkOrderInMassif(int[] massif3, boolean isOrderAsc) {
 
         System.out.println("\nTest massive is ");
-        printMassif(massif3);
+        Arrays.toString(massif3);
         System.out.println("Check ascending order is " + isOrderAsc);
         if (isOrderAsc)
             System.out.println((isMassifAscending(massif3)) ? "Massif is in Ascending order! " : "Massif is NOT in Ascending order! ");
@@ -93,12 +92,12 @@ public class MyApplication {
     static void fillTheMassiveWhith(int[] mas, int value) {
         System.out.println("Massive before");
 
-        printMassif(mas);
+        Arrays.toString(mas);
         for (int i = 0; i < mas.length; i++) {
             mas[i] = value;
         }
         System.out.println("\nMassive after");
-        printMassif(mas);
+        Arrays.toString(mas);
     }
 
     //   -Реализуйте метод,
@@ -106,14 +105,14 @@ public class MyApplication {
 //   увеличивающий каждый элемент которого на указанное число.
     static void massifAddValue(int[] mas, int value) {
         System.out.println("Massive before");
-        printMassif(mas);
+        Arrays.toString(mas);
 
         for (int i = 0; i < mas.length; i++) {
             mas[i] += value;
         }
 
         System.out.println("\nMassive after");
-        printMassif(mas);
+        Arrays.toString(mas);
     }
 
     //      -Реализуйте метод,
@@ -122,7 +121,7 @@ public class MyApplication {
 
     static void compareSumOfHalf(int[] mas) {
         int theSumOfTheFirstHalfOfMas = 0, theSumOfTheSecondHalfOfMas = 0;
-        printMassif(mas);
+        Arrays.toString(mas);
 
         for (int i = 0; i < mas.length / 2; i++) {
             theSumOfTheFirstHalfOfMas += mas[i];
@@ -153,14 +152,9 @@ public class MyApplication {
             sumOfMas = 0;
             i++;
         }
-        printMassif(resultMas);
+        Arrays.toString(resultMas);
     }
 
-    static void printMassif(int[] mas) {
-        for (int item : mas)
-            System.out.print(item + " ");
-        System.out.println();
-    }
 
 
     /*
@@ -173,60 +167,31 @@ public class MyApplication {
      *  = { 4, 5, 4, 1, 1 }
      *
      */
-    static void arraySum(int[]... masD2) {
-        int maxLength = 0;
-        System.out.println("Initial arrays");
-        int[] resultArray = {0};
-        int dimensionsOfI = 0;
-        for (int[] masD1 : masD2) {
-            System.out.println(Arrays.toString(masD1));
 
-            //sum next lines
-            if (dimensionsOfI != 0) {
-                // if dimension of next line is less or =
-                if (dimensionsOfI > masD1.length) {
-                    int k = 0;
-                    for (int item : masD1) {
-                        resultArray[k] += item;
-                        k++;
-                    }
-                    //if dimension of next line is bigger
-                } else {
-                    int[] j = new int[masD1.length];
-                    int k = 0;
-                    for (int item : masD1) {
-                        j[k] = resultArray[k] + item;
-                        k++;
-                    }
-                    resultArray = j;
-                    dimensionsOfI = masD1.length;
-                }
-            }
-            // copy first line to i
-            if (dimensionsOfI == 0) {
-                resultArray = new int[masD1.length];
-                int k = 0;
-                for (int item : masD1) {
-                    resultArray[k] = item;
-                    k++;
-                }
-                dimensionsOfI = masD1.length;
+
+    static void arraySum(int[]... masD2) {
+        int maxArrayLength = 0;
+        for (int[] array : masD2) {
+            if (maxArrayLength < array.length) maxArrayLength = array.length;
+        }
+        int[] newResult = new int[maxArrayLength];
+        for (int i = 0; i < masD2.length; i++) {
+            for (int j = 0; j < masD2[i].length; j++) {
+                newResult[j] = newResult[j] + masD2[i][j];
             }
         }
-        System.out.println("Result line is" + Arrays.toString(resultArray));
+        System.out.println("Result!");
+        for (int[] array : masD2)
+            Arrays.toString(array);
+
+        Arrays.toString(newResult);
     }
 
-    /*
-     * ● Реализуйте метод, проверāĀûий ùто естþ “тоùка” в массиве, в которой сумма левой и правой ùасти
-     * равнý. “Тоùка находитсā между ÿлементами”;
-     * Пример: { 1, 1, 1, 1, 1, | 5 }, { 5, | 3, 4, -2 }, { 7, 2, 2, 2 }, { 9, 4 }
-
-     */
 
     static void checkBalancePoint(int[] array) {
         System.out.println("Input array \n" + Arrays.toString(array));
-        for (int i = 0; i < array.length-1; i++) {
-            if (sumBefore(array, i) == sumAfter(array, i+1)) {
+        for (int i = 0; i < array.length - 1; i++) {
+            if (sumBefore(array, i) == sumAfter(array, i + 1)) {
                 System.out.println("Point is present and index is " + i);
                 return;
             }
@@ -299,14 +264,14 @@ public class MyApplication {
 
     static void invertMassive(int[] mas) {
         System.out.println("Massive before");
-        printMassif(mas);
+        Arrays.toString(mas);
         for (int i = 0, tmp; i < mas.length / 2; i++) {
             tmp = mas[i];
             mas[i] = mas[mas.length - i - 1];
             mas[mas.length - i - 1] = tmp;
         }
         System.out.println("\nMassive turned out");
-        printMassif(mas);
+        Arrays.toString(mas);
     }
 
 }
