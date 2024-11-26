@@ -63,9 +63,6 @@ public class MyApplication {
 
     }
 
-    //Реализуйте метод,
-    // принимающий в качестве аргументов целое число и строку,
-    // и печатающий в консоль строку указанное количество раз
 
     static void repeatString(String str, int n) {
 
@@ -74,9 +71,6 @@ public class MyApplication {
         }
     }
 
-    //-Реализуйте метод, принимающий в качестве аргумента целочисленный массив,
-    // суммирующий все элементы, значение которых больше 5,
-    // и печатающий полученную сумму в консоль.
 
     static void sumOfMassive(int[] mas) {
         int res = 0;
@@ -86,9 +80,7 @@ public class MyApplication {
 
     }
 
-    //      -Реализуйте метод,
-//       принимающий в качестве аргументов целое число и ссылку на целочисленный массив,
-//       метод должен заполниться каждую ячейку массива указанным числом.
+
     static void fillTheMassiveWhith(int[] mas, int value) {
         System.out.println("Massive before");
 
@@ -100,9 +92,6 @@ public class MyApplication {
         Arrays.toString(mas);
     }
 
-    //   -Реализуйте метод,
-//   принимающий в качестве аргументов целое число и ссылку на целочисленный массив,
-//   увеличивающий каждый элемент которого на указанное число.
     static void massifAddValue(int[] mas, int value) {
         System.out.println("Massive before");
         Arrays.toString(mas);
@@ -114,10 +103,6 @@ public class MyApplication {
         System.out.println("\nMassive after");
         Arrays.toString(mas);
     }
-
-    //      -Реализуйте метод,
-    //      принимающий в качестве аргумента целочисленный массив,
-    //      и печатающий в консоль сумма элементов какой из половин массива больше.
 
     static void compareSumOfHalf(int[] mas) {
         int theSumOfTheFirstHalfOfMas = 0, theSumOfTheSecondHalfOfMas = 0;
@@ -154,20 +139,6 @@ public class MyApplication {
         }
         Arrays.toString(resultMas);
     }
-
-
-
-    /*
-     *  Реализуйте метод, принимаĀûий на вход набор øелоùисленнýх массивов, и полуùаĀûий новýй
-     * массив равнýй сумме входāûих;
-     * Пример:
-     *    { 1, 2, 3 }
-     *  + { 2, 2 }
-     *  + { 1, 1, 1, 1, 1}
-     *  = { 4, 5, 4, 1, 1 }
-     *
-     */
-
 
     static void arraySum(int[]... masD2) {
         int maxArrayLength = 0;
@@ -227,13 +198,6 @@ public class MyApplication {
     }
 
 
-    /***************
-     *
-     * Реализуйте метод, проверāĀûий ùто все ÿлементý массива идут в порāдке убýваниā или
-     * возрастаниā (по вýбору полþзователā)
-     *
-     *******/
-
     static boolean isMassifAscending(int[] mas) {
 
         for (int i = 0; i < mas.length - 1; i++) {
@@ -253,14 +217,6 @@ public class MyApplication {
         }
         return true;
     }
-
-
-    /**************
-     *
-     *  Реализуйте метод, “перевораùиваĀûий” входāûий массив
-     *  Пример: { 1 2 3 4 } => { 4 3 2 1 }
-     *
-     * */
 
     static void invertMassive(int[] mas) {
         System.out.println("Massive before");
