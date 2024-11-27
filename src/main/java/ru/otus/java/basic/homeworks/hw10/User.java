@@ -18,7 +18,6 @@ public class User {
         this.mail=mail;
     }
 
-
     public void printUserData(){
         System.out.println("*".repeat(36));
         System.out.println("ФИО: "+secondName+" "+name+" "+lastName);

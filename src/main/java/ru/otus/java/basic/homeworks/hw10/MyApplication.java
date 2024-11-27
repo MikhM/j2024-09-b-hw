@@ -25,26 +25,26 @@ public class MyApplication {
 
             arrayOfUser[i] = new User(randomName, randomSecondName, randomLastName, randomBirthYear, randomName + randomBirthYear + "@advance.tech");
         }
-
         for (User user : arrayOfUser) {
             if (user.birthYear > 1984) user.printUserData();
         }
 
-/*
+        System.out.println("\n".repeat(3));
+        System.out.println("BOX");
 
-* Попробуйте реализовать класс по его описания:
-*  объекты класса Коробка должны иметь размеры и цвет.
-* Коробку можно открывать и закрывать.
-*  Коробку можно перекрашивать.
-* Изменить размер коробки после создания нельзя.
-*  У коробки должен быть метод, печатающий информацию о ней в консоль.
-* В коробку можно складывать предмет (если в ней нет предмета),
-* или выкидывать его оттуда (только если предмет в ней есть),
-* только при условии что коробка открыта (предметом читаем просто строку).
-*  Выполнение методов должно сопровождаться выводом сообщений в консоль.
-        *
-        *
-        *
-        * */
+        Box box = new Box("Big box", "Red");
+
+        box.open();
+        box.close();
+        box.open();
+        box.paint("GREEN!!");
+        box.paint("YELLOW!!");
+        box.open();
+        box.close();
+        box.putItem("Book");
+        box.open();
+        box.putItem("Book");
+        box.putItem("Table");
+
     }
 }
