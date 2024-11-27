@@ -39,7 +39,7 @@ public class Box {
             this.printState();
             return true;
         }
-        System.out.println("Unale close closed box");
+        System.out.println("Unable to close closed box");
         return false;
 
     }

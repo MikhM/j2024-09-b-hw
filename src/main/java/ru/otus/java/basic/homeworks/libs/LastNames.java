@@ -200,5 +200,12 @@ public enum LastNames {
     Феофанович,
     Филатович,
     Филимонович,
-    Филиппович
+    Филиппович;
+
+
+    public static String random() {
+        return Names.values()[(int) Math.random() * Names.values().length].toString();
+    }
+
+
 }
