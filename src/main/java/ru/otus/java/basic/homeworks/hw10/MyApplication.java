@@ -10,12 +10,13 @@ public class MyApplication {
     public static final int LAST_NAME_SIZE = 199;
     public static final int MIN_YEAR = 1950;
     public static final int MAX_YEAR = 2024;
+    public static final int USERS_AMOUNT = 10;
 
 
     public static void main(String[] args) {
 
 
-        User[] arrayOfUser = new User[100];
+        User[] arrayOfUser = new User[USERS_AMOUNT];
         for (int i = 0; i < arrayOfUser.length; i++) {
             String randomName = Names.values()[1 + (int) (Math.random() * NAMES_SIZE)].toString();
             String randomSecondName = SecondName.values()[1 + (int) (Math.random() * SECOND_NAME_SIZE)].toString();
