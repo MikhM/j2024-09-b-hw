@@ -21,7 +21,7 @@ public class MyApplication {
             arrayOfUser[i] = new User(randomName, SecondName.random(), LastNames.random(), randomBirthYear, randomName + randomBirthYear + "@advance.tech");
         }
         for (User user : arrayOfUser) {
-            if (user.birthYear > 1984) user.printUserData();
+            if (user.getBirthYer() > 1984) user.printUserData();
         }
 
         System.out.println("\n".repeat(3));

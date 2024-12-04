@@ -2,6 +2,13 @@ package ru.otus.java.basic.homeworks.hw10;
 
 public class Box {
 
+    private String size;
+    private String color;
+    private boolean isOpened;
+    private boolean isEmpty;
+    private String itemInTheBoxName;
+
+
     public Box(String size, String color) {
         this.size = size;
         this.color = color;
@@ -11,12 +18,6 @@ public class Box {
         System.out.println("New box");
         this.printState();
     }
-
-    public String size;
-    public String color;
-    public boolean isOpened;
-    public boolean isEmpty;
-    public String itemInTheBoxName;
 
     public boolean open() {
         System.out.println("*".repeat(20));
@@ -74,6 +75,6 @@ public class Box {
         System.out.println("*".repeat(35));
         System.out.println("Box. Size=" + size);
         System.out.println("Box. Color=" + color);
-        System.out.println("States: \nis opened - " + isOpened + "\nis empty - " + isEmpty);
+        System.out.println("States: \nis opened - " + isOpened + "\nis empty - " + isEmpty + "\nitem in the box is " + itemInTheBoxName);
     }
 }

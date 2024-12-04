@@ -2,11 +2,11 @@ package ru.otus.java.basic.homeworks.hw10;
 
 public class User {
 
-    public String name;
-    public String secondName;
-    public String lastName;
-    public int birthYear;
-    public String mail;
+    private String name;
+    private String secondName;
+    private String lastName;
+    private int birthYear;
+    private String mail;
 
     public User(String name, String secondName, String lastName, int birthYear, String mail) {
         this.name = name;
@@ -21,5 +21,9 @@ public class User {
         System.out.println("ФИО: " + secondName + " " + name + " " + lastName);
         System.out.println("Год рождения: " + birthYear);
         System.out.println("e-mail: " + mail);
+    }
+
+    public int getBirthYer() {
+        return birthYear;
     }
 }
