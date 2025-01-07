@@ -302,7 +302,7 @@ public enum SecondName {
     МАРУХИН;
 
     public static String random() {
-        return SecondName.values()[(int) Math.random() * SecondName.values().length].toString();
+        return SecondName.values()[(int) (Math.random() * SecondName.values().length)].toString();
     }
 
 }

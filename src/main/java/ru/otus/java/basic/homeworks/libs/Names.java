@@ -216,7 +216,7 @@ public enum Names {
     Фрол;
 
     public static String random() {
-        return Names.values()[(int) Math.random() * (Names.values().length)].toString();
+        return Names.values()[(int) (Math.random() * Names.values().length)].toString();
 
     }
 }
