@@ -1,10 +1,9 @@
 package ru.otus.java.basic.homeworks.hw12;
 
 public class MyApplication {
-    public static final int PLATE_SIZE=50;
-    public static final int CATS_BAND_SIZE=15;
-    public static final int MIN_CATS_BELLY=4;
-
+    public static final int PLATE_SIZE = 50;
+    public static final int CATS_BAND_SIZE = 15;
+    public static final int MIN_CATS_BELLY = 4;
 
 
     public static void main(String[] args) {
@@ -30,10 +29,9 @@ public class MyApplication {
         }
 
         System.out.println("\n Results\n");
-        for(Cat cat: cats){
+        for (Cat cat : cats) {
             cat.info();
         }
-
 
     }
 
