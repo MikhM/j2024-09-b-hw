@@ -18,6 +18,6 @@ public class Cat extends Animal {
     }
 
     public int run(int distance) {
-       return super.run(distance);
+        return super.run(distance);
     }
 }
