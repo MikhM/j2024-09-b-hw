@@ -5,9 +5,9 @@ public class Plate {
     private int foodAmount;
 
     public Plate(int plateSize) {
-        System.out.println("New plates created with " + plateSize + " amount of food.");
         initialPlateSize = plateSize;
         foodAmount = plateSize;
+        System.out.println("New plates created with " + plateSize + " amount of food.");
     }
 
     boolean tryToTakeFoodFromPlate(int value) {
@@ -19,9 +19,7 @@ public class Plate {
     }
 
     void fillThePlateWithFood() {
-        System.out.println("Plate full again and contain " + initialPlateSize);
         foodAmount = initialPlateSize;
+        System.out.println("Plate full again and contain " + initialPlateSize);
     }
-
-
 }
