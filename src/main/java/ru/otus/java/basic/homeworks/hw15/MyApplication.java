@@ -6,6 +6,7 @@ public class MyApplication {
         System.out.println("some text\n\t\t\n again");
         //v3
         //v4
+        //5
     }
 
     public String someString() {
